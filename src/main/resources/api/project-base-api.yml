@@ -29,17 +29,93 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: '#/definitions/Pessoa'
+            type: array
+            items:
+              $ref: '#/definitions/Person'
+
+
+
+    post:
+      tags:
+        - "Pessoa"
+      summary: "Salvar pessoa"
+      operationId: "postPessoa"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "body the Person"
+          schema:
+            $ref: '#/definitions/Person'
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: '#/definitions/Person'
+
+    put:
+      tags:
+        - "Pessoa"
+      summary: "Editar pessoa"
+      operationId: "putPessoa"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "body the Person"
+          schema:
+            $ref: '#/definitions/Person'
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: '#/definitions/Person'
+
+    delete:
+      tags:
+        - "Pessoa"
+      summary: "Deletar pessoa"
+      operationId: "deletePessoa"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "body the Person"
+          schema:
+            $ref: '#/definitions/Person'
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: '#/definitions/Person'
+
 
 definitions:
 
-  Pessoa:
+  Person:
     type: object
     properties:
-      id:
+      idPerson:
         type: integer
         format: int64
-      nome:
+      namePerson:
+        type: string
+      agePerson:
+        type: integer
+        format: int64
+      cpfPerson:
+        type: integer
+        format: int64
+      emailPerson:
         type: string
 
 
